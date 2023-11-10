@@ -20,6 +20,19 @@ export default class App extends Component {
     }
   }
 
+  todoData = [
+    {
+      id : "1",
+      title : "공부하기",
+      completed: true,
+    },
+    {
+      id:"2",
+      title:"청소하기",
+      completed:false,
+    },
+  ]
+
   redner() {
     return (
       <div className = "container">
@@ -27,12 +40,14 @@ export default class App extends Component {
           <div className = "title">
             <h1>할 일 목록</h1>
           </div>
-
-          <div style = {this.getStyle()}>
-            <input type = "checkbox"  defaultChecked={false} />
-            공부하기
-            <button style = {this.btnStyle}/>
-          </div>
+          {this.todoData.map(data => (
+            <div style = {this.getStyle()} key={data.id}>
+              <input type = "checkbox" defaultChecked={false} />
+                {data.title}
+                <button style = {this.btnStyle}>x</button>
+            </div>
+          ))}
+        
         </div>
       </div>
     )
