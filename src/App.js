@@ -2,6 +2,16 @@ import React, {Component} from "react";
 import "./App.css";
 
 export default class App extends Component {
+
+  btnStyle = {
+    color : "#fff",
+    border: "none",
+    padding : "5px 9px",
+    borderRadius: "50%",
+    cursor:"pointer",
+    float:"right"
+  }
+
   redner() {
     return (
       <div className = "container">
@@ -10,6 +20,11 @@ export default class App extends Component {
             <h1>할 일 목록</h1>
           </div>
 
+          <div>
+            <input type = "checkbox"  defaultChecked={false} />
+            공부하기
+            <button style = {this.btnStyle}/>
+          </div>
         </div>
       </div>
     )
